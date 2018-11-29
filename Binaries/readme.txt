@@ -1,0 +1,1 @@
+This folder needs to contain any binaries necessary for specific Campaigns. As an example, the ARPCache module requires autorunsc.exe and autorunsc64.exe.
