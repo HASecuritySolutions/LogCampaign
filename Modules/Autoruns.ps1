@@ -6,7 +6,7 @@ function Campaign-Autoruns {
     } else {
         $path = "$script:LogCampaignDirectory\Binaries\autorunsc.exe"
     }
-    $script:OutputDirectory = "E:\Dropbox\Dropbox\SEC555\scripts\log_campaign"
+    $script:OutputDirectory = ".\"
     if(Test-Path -Path $path){
         #Remove-Item -Force -Path "$script:OutputDirectory\autoruns.csv.old" -ErrorAction SilentlyContinue | Out-Null
         if(Test-Path -Path "$script:OutputDirectory\autoruns.csv"){
