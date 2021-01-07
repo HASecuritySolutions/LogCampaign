@@ -12,7 +12,7 @@ function Campaign-Autoruns {
             Move-Item -Force -Path "$script:OutputDirectory\autoruns.csv" -Destination "$script:OutputDirectory\autoruns.csv.old"
             $PreviousAutoruns = Import-Csv -Path "$script:OutputDirectory\autoruns.csv.old" -Delimiter "`t"
         }
-        & $path "-ct" "-o" "$script:OutputDirectory\autoruns.csv" "-h" "-s" "-t"
+        & $path "-ct" "-o" "$script:OutputDirectory\autoruns.csv" "-h" "-s" "-t" "--accepteula"
         $CurrentAutoruns = Import-Csv -Path "$script:OutputDirectory\autoruns.csv" -Delimiter "`t"
         if($script:Diff){
             $content = Compare-Object -ReferenceObject $CurrentAutoruns -DifferenceObject $PreviousAutoruns -PassThru | Where-Object { $_.SideIndicator -eq '<=' }
